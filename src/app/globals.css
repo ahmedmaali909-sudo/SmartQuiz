@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #05061a;
+  --color-ink-soft: #0a0c2b;
+  --color-panel: #10123a;
+  --color-violet: #7c4dff;
+  --color-indigo: #4b6bff;
+  --color-cyan: #35e0ff;
+  --color-gold: #ffc447;
+  --color-muted: #9aa2c7;
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-arabic: var(--font-arabic);
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(900px 520px at 12% -10%, rgba(124, 77, 255, 0.28), transparent 60%),
+    radial-gradient(760px 480px at 92% 0%, rgba(53, 224, 255, 0.14), transparent 62%),
+    #05061a;
+  background-attachment: fixed;
+  color: #eef0ff;
+  font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+[dir="rtl"] body {
+  font-family: var(--font-arabic), var(--font-body), "Segoe UI", system-ui, sans-serif;
+}
+
+::selection {
+  background: rgba(124, 77, 255, 0.45);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(124, 77, 255, 0.45) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(124, 77, 255, 0.4);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid rgba(53, 224, 255, 0.7);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
